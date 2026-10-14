@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#11081f" />
+  <meta name="description" content="Survival de demonios en mobile: sobrevive oleadas, sube de nivel y supera tu récord." />
+  <title>Inferno Survival — Demonios</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="game-wrap">
+    <canvas id="game" width="420" height="720"></canvas>
+
+    <div class="hud">
+      <div class="stat">Puntos <strong id="score">0</strong></div>
+      <div class="stat">Oleada <strong id="wave">1</strong></div>
+      <div class="stat">Enemigos <strong id="alive">0</strong></div>
+      <div class="health"><span>Vida</span><div class="health-bar"><div id="healthFill"></div></div></div>
+    </div>
+
+    <button id="fireBtn" class="fire-btn">🔥</button>
+
+    <div id="overlay" class="overlay">
+      <div class="overlay-card">
+        <h1>Inferno Survival</h1>
+        <p class="muted">Sobrevive oleadas de demonios. Mueve el dedo para moverte, los disparos son automáticos.</p>
+        <button id="startBtn" class="btn btn-primary">Jugar</button>
+        <div class="tips">
+          <span>Arrastra para moverte</span>
+          <span>Disparo automático</span>
+          <span>Curación: ❤️</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="gameOver" class="overlay" hidden>
+      <div class="overlay-card">
+        <h1>💀 Derrota</h1>
+        <p>Puntuación final: <strong id="finalScore">0</strong></p>
+        <p>Oleada alcanzada: <strong id="finalWave">1</strong></p>
+        <button id="retryBtn" class="btn btn-primary">Reintentar</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer">Inferno Survival · PWA mobile-first · HTML5 Canvas</p>
+  <script src="game.js"></script>
+</body>
+</html>

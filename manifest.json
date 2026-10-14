@@ -1,0 +1,13 @@
+{
+  "name": "Inferno Survival",
+  "short_name": "Inferno",
+  "description": "Survival de demonios: mueve, sobrevive y supera tu récord.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#05020a",
+  "theme_color": "#05020a",
+  "lang": "es",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
