@@ -32,9 +32,9 @@ function ensureAudio(){ if(!audioCtx){ try{audioCtx=new (window.AudioContext||wi
 function beep(freq,dur,type='square',vol=0.07){ if(!soundOn) return; const c=ensureAudio(); if(!c) return; try{ const o=c.createOscillator(),g=c.createGain(); o.type=type; o.frequency.value=freq; g.gain.setValueAtTime(vol,c.currentTime); g.gain.exponentialRampToValueAtTime(0.0001,c.currentTime+dur); o.connect(g).connect(c.destination); o.start(); o.stop(c.currentTime+dur);}catch(e){} }
 
 function resetGame() {
-  player = { x: W/2, y: H*0.75, r: 13, speed: 170, health: 100, maxHealth: 100, angle: -Math.PI/2, invuln: 0 };
+  player = { x: W/2, y: H*0.75, r: 13, speed: 170, health: 120, maxHealth: 120, angle: -Math.PI/2, invuln: 2 };
   bullets = []; demons = []; pickups = []; particles = [];
-  score = 0; wave = 1; kills = 0; alive = 0; spawnTimer = 1.0; spawnInterval = 1.1;
+  score = 0; wave = 1; kills = 0; alive = 0; spawnTimer = 2.0; spawnInterval = 1.6;
   fireCooldown = 0; damageCooldown = 0; shake = 0; pointer.active = false;
   scoreEl.textContent = '0'; waveEl.textContent = '1'; aliveEl.textContent = '0';
   healthFill.style.width = '100%';
